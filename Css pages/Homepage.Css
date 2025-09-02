@@ -24,6 +24,7 @@ body {
 .header-container {
   display: flex;
   flex: 1;
+  height: 100vh;
 }
 
 /* Left Column (Text) */
@@ -125,19 +126,49 @@ body {
 /* --------------------
    RESPONSIVE
 --------------------- */
-@media (max-width: 768px) {
+
+@media (max-width: 1012px) {
   .header-container {
     flex-direction: column;
   }
 
   .header-image {
-    height: 40vh;
-    align-items: center;
+    order: 1;
+    min-height: 50vh;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    padding-bottom: 22rem;
+    /* background-color: #f5f5f5; */
+  }
+
+  .header-content {
+    order: 2;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #000;
   }
 
   .nav-links {
+    /* display: flex; */
     flex-direction: row;
     gap: 1rem;
+  }
+}
+@media (max-width: 783px) {
+  .hero-title {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .header-content {
+    padding: 2rem;
   }
 }

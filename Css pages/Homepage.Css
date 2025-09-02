@@ -37,6 +37,29 @@ body {
   opacity: 0;
 }
 
+/* Hero Titles */
+.hero-title {
+  font-family: "Libre Bodoni", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 75px;
+  margin: 0;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.hero-subtitle {
+  font-family: "Libre Bodoni", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 60px;
+  margin: 0.5rem 0 1.5rem 0;
+  line-height: 1.2;
+  color: #ccc;
+}
+
 /* Right Column (Nav Links) */
 .header-image {
   flex: 1;
@@ -72,16 +95,17 @@ body {
 .underline-hover a::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 50%; /* start at the center */
   bottom: 0;
   width: 0%;
   height: 2px;
-  background-color: rgb(107, 107, 107);
-  transition: width 0.3s ease;
+  background-color: grey;
+  transition: all 0.3s ease;
+  transform: translateX(-50%); /* keeps it centered */
 }
 
 .underline-hover a:hover::after {
-  width: 100%;
+  width: 100%; /* expands evenly from center */
 }
 
 /* --------------------

@@ -1,0 +1,132 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* --------------------
+   NAVBAR
+--------------------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f39c12;
+}
+
+/* --------------------
+   HEADER
+--------------------- */
+.header {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header-container {
+  display: flex;
+  flex: 1;
+  margin-top: 80px; /* space for navbar */
+}
+
+/* Left Column (Text) */
+.header-content {
+  flex: 1;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: slideUp 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+/* Right Column (Placeholder) */
+.header-image {
+  flex: 1;
+  background-color: #1a1a1a; /* Replace with image later */
+}
+
+/* Links */
+.links {
+  margin-top: 1.5rem;
+}
+
+.links a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #f39c12;
+}
+
+/* --------------------
+   ANIMATION
+--------------------- */
+@keyframes slideUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* --------------------
+   RESPONSIVE
+--------------------- */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+  }
+
+  .header-image {
+    height: 40vh;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+}

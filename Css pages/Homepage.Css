@@ -48,6 +48,7 @@ body {
 }
 
 /* Navigation Links - TODO */
+
 .nav-links {
   display: flex;
   flex-direction: row;
@@ -56,17 +57,31 @@ body {
 
 .nav-links a {
   color: #000;
+  font-family: sans-serif;
   text-decoration: none;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  position: relative; /* required for underline animation */
+  transition: color 0.4s ease;
 }
 
-.nav-link:visited {
+/* visited state */
+.nav-links a:visited {
   color: #000;
 }
 
-.nav-links a:hover {
-  color: hsl(0, 1%, 17%);
+.underline-hover a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(107, 107, 107);
+  transition: width 0.3s ease;
+}
+
+.underline-hover a:hover::after {
+  width: 100%;
 }
 
 /* --------------------

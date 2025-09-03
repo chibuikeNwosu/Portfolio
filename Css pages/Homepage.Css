@@ -157,6 +157,19 @@ body {
     gap: 1rem;
   }
 }
+
+@media (max-width: 1011px) {
+  .hero-title {
+    font-size: 70px;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-size: 55px;
+    text-align: center;
+  }
+}
+
 @media (max-width: 783px) {
   .hero-title {
     font-size: 50px;

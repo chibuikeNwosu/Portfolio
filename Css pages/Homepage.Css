@@ -64,10 +64,14 @@ body {
 /* Right Column (Nav Links) */
 .header-image {
   flex: 1;
-  background-color: #f5f5f5; /* placeholder for now */
+  background-image: url("../Images/picture1.JPG");
+  background-size: cover; /* ensures the image covers the container */
+  background-position: top center; /* centers the image */
+  background-repeat: no-repeat; /* prevents tiling */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  justify-content: flex-start; /* keeps nav links at the top */
   padding: 2rem;
 }
 
@@ -80,8 +84,8 @@ body {
 }
 
 .nav-links a {
-  color: #000;
-  font-family: sans-serif;
+  color: #b6b6b6;
+  font-family: "Libre Bodoni", serif;
   text-decoration: none;
   font-size: 1rem;
   position: relative; /* required for underline animation */
@@ -90,7 +94,7 @@ body {
 
 /* visited state */
 .nav-links a:visited {
-  color: #000;
+  color: #1d1d1d;
 }
 
 .underline-hover a::after {

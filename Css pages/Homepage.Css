@@ -1,0 +1,191 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* --------------------
+   HEADER
+--------------------- */
+.header {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header-container {
+  display: flex;
+  flex: 1;
+  height: 100vh;
+}
+
+/* Left Column (Text) */
+.header-content {
+  flex: 1;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: slideUp 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+/* Hero Titles */
+.hero-title {
+  font-family: "Libre Bodoni", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 75px;
+  margin: 0;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.hero-subtitle {
+  font-family: "Libre Bodoni", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 60px;
+  margin: 0.5rem 0 1.5rem 0;
+  line-height: 1.2;
+  color: #ccc;
+}
+
+/* Right Column (Nav Links) */
+.header-image {
+  flex: 1;
+  background-image: url("../Images/picture1.JPG");
+  background-size: cover; /* ensures the image covers the container */
+  background-position: top center; /* centers the image */
+  background-repeat: no-repeat; /* prevents tiling */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start; /* keeps nav links at the top */
+  padding: 2rem;
+}
+
+/* Navigation Links - TODO */
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #b6b6b6;
+  font-family: "Libre Bodoni", serif;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative; /* required for underline animation */
+  transition: color 0.4s ease;
+}
+
+/* visited state */
+.nav-links a:visited {
+  color: #b6b6b6;
+}
+
+.underline-hover a::after {
+  content: "";
+  position: absolute;
+  left: 50%; /* start at the center */
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: grey;
+  transition: all 0.3s ease;
+  transform: translateX(-50%); /* keeps it centered */
+}
+
+.underline-hover a:hover::after {
+  width: 100%; /* expands evenly from center */
+}
+
+/* --------------------
+   ANIMATION
+--------------------- */
+@keyframes slideUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* --------------------
+   RESPONSIVE
+--------------------- */
+
+@media (max-width: 1012px) {
+  .header-container {
+    flex-direction: column;
+  }
+
+  .header-image {
+    order: 1;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 22rem;
+    /* background-color: #f5f5f5; */
+  }
+
+  .header-content {
+    order: 2;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #000;
+  }
+
+  .nav-links {
+    /* display: flex; */
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 1011px) {
+  .hero-title {
+    font-size: 70px;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-size: 55px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 783px) {
+  .hero-title {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .header-content {
+    padding: 2rem;
+  }
+}

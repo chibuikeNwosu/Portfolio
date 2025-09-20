@@ -94,7 +94,7 @@ body {
 
 /* visited state */
 .nav-links a:visited {
-  color: #1d1d1d;
+  color: #b6b6b6;
 }
 
 .underline-hover a::after {

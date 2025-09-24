@@ -65,13 +65,13 @@ body {
 .header-image {
   flex: 1;
   background-image: url("../Images/picture1.JPG");
-  background-size: cover; /* ensures the image covers the container */
-  background-position: top center; /* centers the image */
-  background-repeat: no-repeat; /* prevents tiling */
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: flex-start; /* keeps nav links at the top */
+  justify-content: flex-start;
   padding: 2rem;
 }
 
@@ -114,7 +114,68 @@ body {
 }
 
 /* --------------------
-   ANIMATION
+   ABOUT SECTION
+--------------------- */
+.about {
+  padding: 4rem 2rem;
+  background-color: #f7f3f3;
+  color: #000;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column; /* keeps everything stacked */
+  align-items: center;
+  gap: 3rem;
+  /* max-width: 1000px; */
+  margin: 0 auto;
+}
+
+/* Main text block (aligned to right as in your sketch) */
+
+/* TODO */
+.about-text {
+  font-family: sans-serif;
+  align-self: flex-end;
+  max-width: 680px;
+  line-height: 1.6;
+  font-size: 1.4rem;
+  text-align: right;
+  padding: 6rem 20px 3rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-text.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Big centered card */
+.about-extra {
+  font-family: "Libre Bodoni", serif;
+  width: 1500px;
+  height: 430px;
+  /* background-color: #f0eded; */
+  background-image: url("../Images/Art3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 4.2rem;
+  font-style: italic;
+  line-height: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.about-extra p {
+  color: rgb(238, 235, 235);
+}
+
+/* --------------------
+   ANIMATION -- Header text
 --------------------- */
 @keyframes slideUp {
   0% {
@@ -126,9 +187,10 @@ body {
     opacity: 1;
   }
 }
+/* ANIMATION -- About Me TEXT */
 
 /* --------------------
-   RESPONSIVE
+   RESPONSIVE - Header section
 --------------------- */
 
 @media (max-width: 1012px) {
@@ -187,5 +249,43 @@ body {
 
   .header-content {
     padding: 2rem;
+  }
+}
+
+/* --------------------
+   RESPONSIVE - About me section
+--------------------- */
+/* @media (max-width: 768px) {
+  .about {
+    padding: 2rem 1rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .about-extra {
+    font-size: 0.95rem;
+    padding: 1.5rem;
+  }
+} */
+
+/* --------------------
+   RESPONSIVE - About me section
+--------------------- */
+@media (max-width: 768px) {
+  .about {
+    padding: 2rem 1rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    text-align: left; /* switch to left-aligned on mobile */
+    align-self: flex-start; /* reset from right to left */
+  }
+
+  .about-extra {
+    font-size: 0.95rem;
+    padding: 1.5rem;
   }
 }

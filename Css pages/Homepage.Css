@@ -168,6 +168,9 @@ body {
   font-style: italic;
   line-height: 2;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .about-extra p {
@@ -187,7 +190,11 @@ body {
     opacity: 1;
   }
 }
-/* ANIMATION -- About Me TEXT */
+/* ANIMATION -- About-Me section */
+.about-extra.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* --------------------
    RESPONSIVE - Header section

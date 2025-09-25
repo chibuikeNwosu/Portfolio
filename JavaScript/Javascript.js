@@ -1,4 +1,4 @@
-// JavaScript to handle scroll-triggered animation for "About Me" text.
+// JavaScript to handle scroll-triggered animation for "About Me" text and card.
 
 // Function to check if element is in viewport
 function isInViewport(element) {
@@ -12,9 +12,24 @@ function isInViewport(element) {
 // Function to handle scroll event
 function handleScroll() {
   const aboutText = document.querySelector(".about-text");
+  const aboutExtra = document.querySelector(".about-extra");
 
-  if (isInViewport(aboutText) && !aboutText.classList.contains("animate")) {
+  // Animate about-text (your existing functionality)
+  if (
+    aboutText &&
+    isInViewport(aboutText) &&
+    !aboutText.classList.contains("animate")
+  ) {
     aboutText.classList.add("animate");
+  }
+
+  // Animate card (new functionality)
+  if (
+    aboutExtra &&
+    isInViewport(aboutExtra) &&
+    !aboutExtra.classList.contains("animate")
+  ) {
+    aboutExtra.classList.add("animate");
   }
 }
 

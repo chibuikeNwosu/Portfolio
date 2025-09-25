@@ -262,37 +262,22 @@ body {
 /* --------------------
    RESPONSIVE - About me section
 --------------------- */
-/* @media (max-width: 768px) {
+
+@media (max-width: 1547px) {
   .about {
     padding: 2rem 1rem;
   }
 
   .about-text {
-    font-size: 1rem;
+    font-size: 1.3rem;
+    text-align: left;
   }
 
   .about-extra {
-    font-size: 0.95rem;
+    font-size: 3.5rem;
+    line-height: 2.8;
     padding: 1.5rem;
-  }
-} */
-
-/* --------------------
-   RESPONSIVE - About me section
---------------------- */
-@media (max-width: 768px) {
-  .about {
-    padding: 2rem 1rem;
-  }
-
-  .about-text {
-    font-size: 1rem;
-    text-align: left; /* switch to left-aligned on mobile */
-    align-self: flex-start; /* reset from right to left */
-  }
-
-  .about-extra {
-    font-size: 0.95rem;
-    padding: 1.5rem;
+    width: 90rem;
+    height: auto;
   }
 }

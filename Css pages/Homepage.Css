@@ -177,70 +177,6 @@ body {
   color: rgb(238, 235, 235);
 }
 
-/* MY - WORK SECTION */
-
-.work-section {
-  padding: 4rem 2rem;
-  background-color: #f9f9f9;
-}
-
-.work-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.work-header h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.work-grid {
-  display: grid;
-  gap: 3rem;
-}
-
-.work-item {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  animation: slideUp 0.8s ease both;
-}
-
-.work-media video {
-  width: 100%;
-  border-radius: 10px;
-  display: block;
-}
-
-.work-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.work-content p {
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  background: #000;
-  color: #000000;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background: #444;
-}
-
 /* --------------------
    ANIMATION -- Header text
 --------------------- */
@@ -258,18 +194,6 @@ body {
 .about-extra.animate {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Slide-up ANIMATION */
-@keyframes slideUp {
-  from {
-    transform: translateY(40px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 /* --------------------

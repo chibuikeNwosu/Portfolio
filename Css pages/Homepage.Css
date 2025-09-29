@@ -152,29 +152,27 @@ body {
   transform: translateY(0);
 }
 
-/* Big centered card */
+/* Big centered video background */
 .about-extra {
-  font-family: "Libre Bodoni", serif;
+  position: relative;
   width: 1500px;
   height: 430px;
-  /* background-color: #f0eded; */
-  background-image: url("../Images/Art3.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 2rem;
   border-radius: 10px;
-  text-align: center;
-  font-size: 4.2rem;
-  font-style: italic;
-  line-height: 2;
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.about-extra p {
-  color: rgb(238, 235, 235);
+/* Background video */
+.about-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* --------------------

@@ -177,6 +177,124 @@ body {
   color: rgb(238, 235, 235);
 }
 
+/* MY WORK SECTION */
+.my-work-section {
+  padding: 4rem 1.5rem;
+  background: #f7f3f3;
+  transition: background-color 1.5s ease;
+}
+
+/* When active, background changes */
+.my-work-section.active {
+  background: #131313; /* pick any highlight color */
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-family: "Libre Bodoni", serif;
+  text-align: left;
+  color: #f2f2f2;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #f2f2f2;
+}
+
+/* Project Layout */
+
+.project-title {
+  font-family: "Libre Bodoni", serif;
+  text-align: left;
+  color: #f2f2f2;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .project {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Project Media */
+.project-media img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Project Details */
+.project-details h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-description {
+  color: #d9d8d8;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+/* Visit Link */
+.project-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #dfdfdf;
+  text-decoration: none;
+}
+
+.project-link:hover {
+  color: #dfdfdf;
+}
+
+/* Project Tags */
+.project-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-tags li {
+  background: #eee;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+/* --- PROJECT ANIMATIONS --- */
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  align-items: start;
+
+  opacity: 0; /* hidden initially */
+  transform: translateY(50px); /* pushed down */
+  transition: all 0.8s ease-out;
+}
+
+.project.show {
+  opacity: 1;
+  transform: translateY(0); /* slides up smoothly */
+}
+
 /* --------------------
    ANIMATION -- Header text
 --------------------- */

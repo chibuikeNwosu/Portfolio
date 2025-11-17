@@ -152,9 +152,9 @@ body {
   transform: translateY(0);
 }
 
-/* Big centered card */
+/* Big centered video background */
 .about-extra {
-  font-family: "Libre Bodoni", serif;
+  position: relative;
   width: 1500px;
   height: 430px;
   /* background-color: #f0eded; */
@@ -164,10 +164,7 @@ body {
   background-repeat: no-repeat;
   padding: 2rem;
   border-radius: 10px;
-  text-align: center;
-  font-size: 4.2rem;
-  font-style: italic;
-  line-height: 2;
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   opacity: 0;
   transform: translateY(50px);

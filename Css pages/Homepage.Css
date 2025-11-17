@@ -65,13 +65,13 @@ body {
 .header-image {
   flex: 1;
   background-image: url("../Images/picture1.JPG");
-  background-size: cover; /* ensures the image covers the container */
-  background-position: top center; /* centers the image */
-  background-repeat: no-repeat; /* prevents tiling */
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: flex-start; /* keeps nav links at the top */
+  justify-content: flex-start;
   padding: 2rem;
 }
 
@@ -114,7 +114,252 @@ body {
 }
 
 /* --------------------
-   ANIMATION
+   ABOUT SECTION
+--------------------- */
+.about {
+  padding: 4rem 2rem;
+  background-color: #f7f3f3;
+  color: #000;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column; /* keeps everything stacked */
+  align-items: center;
+  gap: 3rem;
+  /* max-width: 1000px; */
+  margin: 0 auto;
+}
+
+/* Main text block (aligned to right as in your sketch) */
+
+/* TODO */
+.about-text {
+  font-family: sans-serif;
+  align-self: flex-end;
+  max-width: 680px;
+  line-height: 1.6;
+  font-size: 1.4rem;
+  text-align: right;
+  padding: 6rem 20px 3rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-text.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Big centered card */
+.about-extra {
+  font-family: "Libre Bodoni", serif;
+  width: 1500px;
+  height: 430px;
+  /* background-color: #f0eded; */
+  background-image: url("../Images/3d-rendering-abstract-black-white-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 4.2rem;
+  font-style: italic;
+  line-height: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-extra p {
+  color: rgb(164, 156, 156);
+}
+
+/* MY WORK SECTION */
+.my-work-section {
+  padding: 4rem 1.5rem;
+  background: #f7f3f3;
+  transition: background-color 1.5s ease;
+}
+
+/* When active, background changes */
+.my-work-section.active {
+  background: #131313; /* pick any highlight color */
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-family: "Libre Bodoni", serif;
+  text-align: left;
+  color: #f2f2f2;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #f2f2f2;
+}
+
+/* Project Layout */
+
+.project-title {
+  font-family: "Libre Bodoni", serif;
+  text-align: left;
+  color: #f2f2f2;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .project {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Project Media */
+.project-media img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Project Details */
+.project-details h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-description {
+  color: #d9d8d8;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+/* Visit Link */
+.project-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #dfdfdf;
+  text-decoration: none;
+}
+
+.project-link:hover {
+  color: #dfdfdf;
+}
+
+/* Project Tags */
+.project-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-tags li {
+  background: #eee;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+/* --- PROJECT ANIMATIONS --- */
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  align-items: start;
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease-out;
+}
+
+.project.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer Section*/
+.footer {
+  background: #1e1e1e;
+  color: #f1f1f1;
+  padding: 3rem 1rem 1.5rem;
+  font-family: "Inter", sans-serif;
+}
+
+/* Center container */
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Social Links */
+.social-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.social-links a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background: #f1f1f1;
+  color: #1e1e1e;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #6c63ff;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* --------------------
+   ANIMATION -- Header text
 --------------------- */
 @keyframes slideUp {
   0% {
@@ -126,9 +371,14 @@ body {
     opacity: 1;
   }
 }
+/* ANIMATION -- About-Me section */
+.about-extra.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* --------------------
-   RESPONSIVE
+   RESPONSIVE - Header section
 --------------------- */
 
 @media (max-width: 1012px) {
@@ -187,5 +437,28 @@ body {
 
   .header-content {
     padding: 2rem;
+  }
+}
+
+/* --------------------
+   RESPONSIVE - About me section
+--------------------- */
+
+@media (max-width: 1547px) {
+  .about {
+    padding: 2rem 1rem;
+  }
+
+  .about-text {
+    font-size: 1.3rem;
+    text-align: left;
+  }
+
+  .about-extra {
+    font-size: 3.5rem;
+    line-height: 2.8;
+    padding: 1.5rem;
+    width: 90rem;
+    height: auto;
   }
 }

@@ -14,21 +14,25 @@
     <link rel="stylesheet" href="./Css pages/Process.Css" />
   </head>
   <body>
-    <header class="page-header">
-      <div class="page-header-container">
-        <h1 class="page-hero-title">Process</h1>
-        <nav class="nav-links underline-hover page-nav">
-          <a href="./index.html">Home</a>
-          <a href="./index.html#my-work">Work</a>
-          <a href="./process.html">Process</a>
-          <a href="./blog.html">Blog</a>
-          <a href="./index.html#contact">Get In Touch</a>
-        </nav>
+    <header class="header process-header">
+      <div class="header-container">
+        <!-- Left Column -->
+        <div class="header-content">
+          <h1 class="hero-title">Process</h1>
+          <h3 class="hero-subtitle process-subtitle">
+            How an idea becomes something people can actually use.
+          </h3>
+        </div>
+
+        <!-- Right Column (Nav Links) -->
+        <div class="header-image process-header-image">
+          <nav class="nav-links underline-hover">
+            <a href="./index.html">Home</a>
+            <a href="./process.html">Process</a>
+            <a href="./index.html#contact">Get In Touch</a>
+          </nav>
+        </div>
       </div>
-      <p class="page-hero-subtitle">
-        How an idea becomes something people can actually use — four stages, no
-        shortcuts.
-      </p>
     </header>
 
     <!-- Process Stages -->
@@ -37,43 +41,60 @@
         <!-- Stage 01 -->
         <article class="stage">
           <div class="stage-number">01</div>
+          <div class="stage-media">
+            <img
+              src="./Images/SmartReaserch.jpeg"
+              alt="A picture of a SmartFactory Micro-Monitor sensor research or spec comparison"
+              loading="lazy"
+            />
+          </div>
           <div class="stage-content">
             <h2 class="stage-title">Research</h2>
             <p class="stage-description">
-              Every project starts by understanding who the software is actually
-              for, not just what it should do. For
-              <strong>Scope3Bridge</strong>, that meant reading the GHG Protocol
-              Corporate Standard closely enough to understand why SME suppliers
-              dread sustainability data requests from bigger clients — the forms
-              are built for enterprises with whole compliance teams, not a
-              five-person supplier trying to answer in a spreadsheet. Research
-              is where I find the real constraint, not the obvious one.
+              <strong>SmartFactory Micro-Monitor</strong> started with a cost
+              problem, not a technical one: enterprise ESG monitoring tools run
+              upwards of €15,000 a year, putting real-time environmental
+              compliance completely out of reach for small manufacturers.
+              Research meant figuring out which six parameters actually matter
+              for compliance — temperature, humidity, air quality, dust, noise,
+              energy draw — and which sensors could measure them accurately for
+              a fraction of that cost. The constraint wasn't "can this be
+              built," it was "can this be built for under €100."
             </p>
             <ul class="stage-tags">
-              <li>Domain reading</li>
-              <li>User constraints</li>
+              <li>Cost constraints</li>
+              <li>Sensor selection</li>
               <li>Problem framing</li>
             </ul>
           </div>
         </article>
 
         <!-- Stage 02 -->
-        <article class="stage">
+        <article class="stage stage-reverse">
           <div class="stage-number">02</div>
+          <div class="stage-media">
+            <img
+              src="./Images/SmartDashboard.png"
+              alt="A picture of the SmartFactory Micro-Monitor system architecture or GPIO wiring plan"
+              loading="lazy"
+            />
+          </div>
           <div class="stage-content">
             <h2 class="stage-title">Design</h2>
             <p class="stage-description">
-              I sketch the data model before I sketch a single screen. Once I
-              know what a "bill" or an "emissions entry" actually is in the
-              system, the UI mostly falls out of that shape. From there it's
-              wireframes, then a small, deliberate set of design tokens — color,
-              type, layout — so the interface stays coherent instead of
-              accreting random decisions page by page.
+              Before wiring a single sensor, I designed a five-layer system:
+              hardware, a polling daemon, a database, a threshold engine, and a
+              dashboard — each with one clear job. I mapped out exactly which
+              GPIO pins each sensor would use, and where an analog sensor like
+              the MQ-135 would need an ADS1115 converter sitting between it and
+              the Pi to translate voltage into a number the software could
+              actually read. Getting this on paper first meant far fewer
+              surprises once the breadboard came out.
             </p>
             <ul class="stage-tags">
-              <li>Data modelling</li>
-              <li>Wireframes</li>
-              <li>Design tokens</li>
+              <li>System architecture</li>
+              <li>GPIO planning</li>
+              <li>Hardware/software mapping</li>
             </ul>
           </div>
         </article>
@@ -81,41 +102,59 @@
         <!-- Stage 03 -->
         <article class="stage">
           <div class="stage-number">03</div>
+          <div class="stage-media">
+            <img
+              src="./Images/SmartBuild.jpeg"
+              alt="A picture of the SmartFactory Micro-Monitor hardware or breadboard"
+              loading="lazy"
+            />
+          </div>
           <div class="stage-content">
             <h2 class="stage-title">Build</h2>
             <p class="stage-description">
-              I build backend-first: get the data flowing correctly through a
-              Node.js/Express API into MySQL before touching a component
-              library. That order means the frontend — usually React — is built
-              against real endpoints from day one instead of mocked data that
-              quietly diverges from reality. Features ship in thin, working
-              slices rather than one large unfinished push.
+              On <strong>SmartFactory Micro-Monitor</strong>, build meant wiring
+              six sensors to a Raspberry Pi, debugging I2C conflicts between the
+              ADS1115 and a UART serial line, then layering a five-part Python
+              backend — polling daemon, SQLite store, threshold engine, Flask
+              API — before touching the dashboard. Same instinct on web
+              projects: get real data flowing through a real API first, so the
+              frontend is never built against a guess.
             </p>
             <ul class="stage-tags">
-              <li>Node.js / Express</li>
-              <li>MySQL</li>
-              <li>React</li>
+              <li>Python / Flask</li>
+              <li>Hardware debugging</li>
+              <li>API-first</li>
             </ul>
           </div>
         </article>
 
         <!-- Stage 04 -->
-        <article class="stage">
+        <article class="stage stage-reverse">
           <div class="stage-number">04</div>
+          <div class="stage-media">
+            <img
+              src="./Images/SmartTesting.jpeg"
+              alt="A picture of a SmartFactory Micro-Monitor sensor testing or debug log screenshot"
+              loading="lazy"
+            />
+          </div>
           <div class="stage-content">
             <h2 class="stage-title">Test</h2>
             <p class="stage-description">
-              I test the boring paths as hard as the exciting ones — what
-              happens when a supplier uploads a malformed bill, or a CO2e
-              calculation gets an empty field. For a tool meant to produce a
-              number a client will report to a bigger company, quietly wrong
-              output is worse than a visible error. I'd rather the system say "I
-              don't know" than guess.
+              I tested every sensor individually before integrating it into the
+              full system — a discipline that paid off when the ADS1115 started
+              throwing I2C communication errors (fixed by dropping to direct
+              register access via <code>smbus2</code>) and when the PMS5003's
+              UART line conflicted with the Pi's Bluetooth (fixed by disabling
+              Bluetooth in <code>config.txt</code>). For a device meant to
+              trigger real alerts on a factory floor, I'd rather catch a wiring
+              conflict on the bench than have a sensor silently go quiet in
+              production.
             </p>
             <ul class="stage-tags">
-              <li>Edge cases</li>
-              <li>Manual QA</li>
-              <li>Real data trials</li>
+              <li>Per-sensor validation</li>
+              <li>Hardware debugging</li>
+              <li>Real-world testing</li>
             </ul>
           </div>
         </article>

@@ -179,6 +179,39 @@ body {
   color: rgb(164, 156, 156);
 }
 
+/* Text overlay for the About image card */
+.about-extra-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.35) 45%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  padding: 2rem;
+}
+
+.about-interests {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-interests li {
+  font-family: "Libre Bodoni", serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 2.7rem;
+  letter-spacing: 0.3px;
+  color: #fff;
+  line-height: 1.6;
+}
+
 /* MY WORK SECTION */
 .my-work-section {
   padding: 4rem 1.5rem;
@@ -348,9 +381,10 @@ body {
 }
 
 .social-links a:hover {
-  background: #6c63ff;
-  color: #fff;
-  transform: translateY(-3px);
+  background: #fff;
+  color: #000;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px) scale(1.08);
 }
 
 /* Bottom Bar */
@@ -464,5 +498,9 @@ body {
     padding: 1.5rem;
     width: 90rem;
     height: auto;
+  }
+
+  .about-interests li {
+    font-size: 1.1rem;
   }
 }

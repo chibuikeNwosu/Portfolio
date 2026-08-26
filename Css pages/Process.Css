@@ -1,43 +1,31 @@
 /* --------------------
-   PAGE HEADER (Process)
+   PROCESS HEADER
+   Reuses .header / .header-content / .header-image from
+   Homepage.Css for visual consistency with the homepage hero.
+   These rules only adjust what needs to differ.
 --------------------- */
-.page-header {
-  background-color: #000;
-  padding: 6rem 4rem 4rem;
-  min-height: 40vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.process-header {
+  min-height: 65vh;
 }
 
-.page-header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 2rem;
+.process-header .header-container {
+  height: 65vh;
 }
 
-.page-hero-title {
-  font-family: "Libre Bodoni", serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: italic;
-  font-size: 65px;
-  margin: 0;
-  color: #fff;
-}
-
-.page-nav {
-  padding-top: 0.75rem;
-}
-
-.page-hero-subtitle {
+.process-subtitle {
   font-family: sans-serif;
-  color: #b6b6b6;
+  font-style: normal;
   font-size: 1.1rem;
+  color: #b6b6b6;
   max-width: 480px;
-  margin-top: 2rem;
+  line-height: 1.6;
+}
+
+.process-header-image {
+  background-image: none;
+  background-color: #0d0d0d;
+  align-items: flex-end;
+  justify-content: flex-start;
 }
 
 /* --------------------
@@ -55,9 +43,10 @@
 
 .stage {
   display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 2rem;
-  padding: 3rem 0;
+  grid-template-columns: 90px 380px 1fr;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 3.5rem 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
   opacity: 0;
@@ -65,6 +54,18 @@
   transition:
     opacity 0.6s ease,
     transform 0.6s ease;
+}
+
+.stage-reverse {
+  grid-template-columns: 90px 1fr 380px;
+}
+
+.stage-reverse .stage-media {
+  order: 3;
+}
+
+.stage-reverse .stage-content {
+  order: 2;
 }
 
 .stage:last-child {
@@ -82,6 +83,37 @@
   font-size: 3.5rem;
   color: rgba(0, 0, 0, 0.15);
   line-height: 1;
+  align-self: start;
+}
+
+.stage-media {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: #f0eded;
+}
+
+.stage-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.stage-media-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  color: #fff;
+  /* background: rgba(0, 0, 0, 0.35); */
 }
 
 .stage-title {
@@ -121,20 +153,22 @@
    RESPONSIVE
 --------------------- */
 @media (max-width: 700px) {
-  .page-header {
-    padding: 4rem 1.5rem 2.5rem;
-  }
-
-  .page-hero-title {
-    font-size: 42px;
-  }
-
-  .stage {
+  .stage,
+  .stage-reverse {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.25rem;
+  }
+
+  .stage-reverse .stage-media,
+  .stage-reverse .stage-content {
+    order: initial;
   }
 
   .stage-number {
     font-size: 2.5rem;
+  }
+
+  .stage-media {
+    aspect-ratio: 16 / 9;
   }
 }

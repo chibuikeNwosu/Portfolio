@@ -144,7 +144,9 @@ body {
   padding: 6rem 20px 3rem;
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .about-text.animate {
@@ -168,7 +170,9 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .about-extra p {
@@ -329,15 +333,18 @@ body {
 }
 
 .social-links a {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 35px;
   height: 35px;
   background: #f1f1f1;
   color: #1e1e1e;
-  text-align: center;
-  line-height: 35px;
   border-radius: 50%;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 .social-links a:hover {

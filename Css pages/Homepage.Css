@@ -157,8 +157,9 @@ body {
 /* Big centered video background */
 .about-extra {
   position: relative;
-  width: 1500px;
-  height: 430px;
+  width: 100%;
+  max-width: 1100px;
+  aspect-ratio: 16 / 6;
   /* background-color: #f0eded; */
   background-image: url("../Images/3d-rendering-abstract-black-white-background.jpg");
   background-size: cover;
@@ -496,8 +497,6 @@ body {
     font-size: 3.5rem;
     line-height: 2.8;
     padding: 1.5rem;
-    width: 90rem;
-    height: auto;
   }
 
   .about-interests li {

@@ -1,0 +1,416 @@
+/* --------------------
+   BLOG HEADER
+   Reuses .header / .header-content / .header-image from
+   Homepage.Css, and .process-header-image / .process-subtitle
+   from Process.Css for visual consistency across pages.
+--------------------- */
+.blog-header {
+  min-height: 65vh;
+}
+
+.blog-header .header-container {
+  height: 65vh;
+}
+
+/* --------------------
+   BLOG LAYOUT (3-column)
+--------------------- */
+.blog-layout {
+  background-color: #f7f3f3;
+  padding: 4rem 1.5rem 6rem;
+}
+
+.blog-layout-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 240px 1fr 280px;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.blog-status {
+  font-family: sans-serif;
+  color: #666;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.sidebar-heading {
+  font-family: "Libre Bodoni", serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #111;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #111;
+}
+
+/* --------------------
+   LEFT SIDEBAR: Interests
+--------------------- */
+.blog-sidebar-left {
+  position: sticky;
+  top: 2rem;
+}
+
+.interest-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.interest-card h3 {
+  font-family: "Libre Bodoni", serif;
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+  color: #111;
+}
+
+.interest-card p {
+  font-family: sans-serif;
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --------------------
+   CENTER: Feed
+--------------------- */
+.featured-post {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  padding: 0 0 1.75rem;
+  margin-bottom: 2.5rem;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.featured-post:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.featured-post-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.featured-post-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-post .blog-card-date,
+.recent-row .blog-card-date {
+  font-family: sans-serif;
+  font-size: 0.78rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0 1.75rem;
+}
+
+.featured-post-title {
+  font-family: "Libre Bodoni", serif;
+  font-size: 2rem;
+  margin: 0.5rem 0 0.75rem;
+  padding: 0 1.75rem;
+  color: #111;
+}
+
+.featured-post-excerpt {
+  font-family: sans-serif;
+  color: #444;
+  line-height: 1.7;
+  font-size: 1rem;
+  padding: 0 1.75rem;
+  margin: 0 0 1rem;
+}
+
+.read-more-link {
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111;
+  padding: 0 1.75rem;
+}
+
+.recent-heading {
+  font-family: "Libre Bodoni", serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #111;
+  margin: 0 0 1rem;
+}
+
+.recent-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-row {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.recent-row:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.recent-row .blog-card-date {
+  padding: 0;
+}
+
+.recent-row-title {
+  font-family: "Libre Bodoni", serif;
+  font-size: 1.1rem;
+  margin: 0.3rem 0 0;
+  color: #111;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.page-btn {
+  background: #111;
+  border: 2px solid #111;
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.page-btn:hover {
+  background: #333;
+}
+
+.page-btn.active {
+  background: #fff;
+  color: #111;
+  cursor: default;
+}
+
+.page-ellipsis {
+  font-family: sans-serif;
+  color: #999;
+  padding: 0 0.25rem;
+}
+
+.page-next {
+  width: auto;
+  padding: 0 1.1rem;
+  border-radius: 6px;
+}
+
+/* --------------------
+   RIGHT SIDEBAR: About + Contact
+--------------------- */
+.blog-sidebar-right {
+  position: sticky;
+  top: 2rem;
+}
+
+.about-author-card,
+.contact-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.author-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.about-author-card p,
+.contact-card p {
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+
+.author-name {
+  font-weight: 700;
+  color: #111;
+}
+
+.about-author-card a,
+.contact-card a {
+  color: #111;
+}
+
+.sidebar-social {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-social a {
+  width: 30px;
+  height: 30px;
+}
+
+.contact-btn {
+  display: inline-block;
+  background: #111;
+  color: #fff !important;
+  padding: 0.6rem 1.1rem;
+  border-radius: 6px;
+  font-family: sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.25s ease;
+}
+
+.contact-btn:hover {
+  background: #333;
+}
+
+/* --------------------
+   SINGLE POST VIEW
+--------------------- */
+.blog-post-section {
+  background-color: #f7f3f3;
+  padding: 4rem 1.5rem 6rem;
+}
+
+.blog-post-section .container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.post-view-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.back-link {
+  background: none;
+  border: none;
+  font-family: sans-serif;
+  color: #555;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 0;
+}
+
+.back-link:hover {
+  color: #111;
+}
+
+.share-btn {
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #111;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.share-btn:hover {
+  background: #f1f1f1;
+  border-color: #999;
+}
+
+.blog-post-date {
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.blog-post-title {
+  font-family: "Libre Bodoni", serif;
+  font-size: 2.5rem;
+  margin: 0.75rem 0 1.5rem;
+  color: #111;
+}
+
+.blog-post-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.blog-post-body {
+  font-family: sans-serif;
+  color: #333;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.blog-post-body p {
+  margin-bottom: 1.25rem;
+}
+
+/* --------------------
+   RESPONSIVE
+--------------------- */
+@media (max-width: 980px) {
+  .blog-layout-container {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-sidebar-left,
+  .blog-sidebar-right {
+    position: static;
+  }
+}
+
+@media (max-width: 700px) {
+  .blog-post-title {
+    font-size: 1.9rem;
+  }
+}

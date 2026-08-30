@@ -154,65 +154,6 @@ body {
   transform: translateY(0);
 }
 
-/* Big centered video background */
-.about-extra {
-  position: relative;
-  width: 100%;
-  max-width: 1100px;
-  aspect-ratio: 16 / 6;
-  /* background-color: #f0eded; */
-  background-image: url("../Images/3d-rendering-abstract-black-white-background.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 2rem;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  opacity: 0;
-  transform: translateY(50px);
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-}
-
-.about-extra p {
-  color: rgb(164, 156, 156);
-}
-
-/* Text overlay for the About image card */
-.about-extra-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.75) 0%,
-    rgba(0, 0, 0, 0.35) 45%,
-    rgba(0, 0, 0, 0.05) 100%
-  );
-  padding: 2rem;
-}
-
-.about-interests {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.about-interests li {
-  font-family: "Libre Bodoni", serif;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 2.7rem;
-  letter-spacing: 0.3px;
-  color: #fff;
-  line-height: 1.6;
-}
-
 /* MY WORK SECTION */
 .my-work-section {
   padding: 4rem 1.5rem;
@@ -252,12 +193,6 @@ body {
   color: #f2f2f2;
   font-size: 3rem;
   margin-bottom: 0.5rem;
-}
-
-@media (max-width: 768px) {
-  .project {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* Project Media */
@@ -410,11 +345,6 @@ body {
     opacity: 1;
   }
 }
-/* ANIMATION -- About-Me section */
-.about-extra.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* --------------------
    RESPONSIVE - Header section
@@ -492,14 +422,29 @@ body {
     font-size: 1.3rem;
     text-align: left;
   }
+}
 
-  .about-extra {
-    font-size: 3.5rem;
-    line-height: 2.8;
-    padding: 1.5rem;
+/* --------------------
+   RESPONSIVE - My Work section
+--------------------- */
+
+@media (max-width: 768px) {
+  .project {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 3rem;
   }
 
-  .about-interests li {
-    font-size: 1.1rem;
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .project-title {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-description {
+    font-size: 0.95rem;
   }
 }
